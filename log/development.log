@@ -3413,3 +3413,603 @@ Processing by ActiveStorage::DiskController#show as PNG
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePostComments (20220409072739)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "post_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" text, "user_id" integer, "post_image_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220409072739"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 116.82.161.120 at 2022-04-09 07:43:40 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 0.8ms | Allocations: 231)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | Allocations: 23682)
+Completed 200 OK in 58ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 27196)
+
+
+Started GET "/" for 116.82.161.120 at 2022-04-09 07:43:41 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 9813)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.7ms | Allocations: 10215)
+
+
+Started GET "/post_images/1" for 116.82.161.120 at 2022-04-09 07:44:05 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPostImage Load (0.1ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:14
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:15
+  Rendered post_images/show.html.erb within layouts/application (Duration: 48.1ms | Allocations: 34216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 37389)
+Completed 200 OK in 72ms (Views: 51.3ms | ActiveRecord: 3.3ms | Allocations: 47901)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9cd236b35d5176368b54bde561d21c4d74213af0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:05 +0000
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8c95f9b047a9dfc73e88d9951d35292ce047613/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--cd2b2f22947e1e465dafc68aec2ef4d65aa799c5/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:05 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8c95f9b047a9dfc73e88d9951d35292ce047613", "variation_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9cd236b35d5176368b54bde561d21c4d74213af0", "filename"=>"142_refileDownloadImage"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (9.7ms) [0m[34mGenerated URL for file at key: 9ig82sctmk6t84hye9ak01dtenoq (https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png)[0m
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png
+Completed 302 Found in 34ms (ActiveRecord: 0.4ms | Allocations: 13079)
+
+
+[36m  Disk Storage (5.6ms) [0m[34mGenerated URL for file at key: dydg7bgwlj121zctn1ahraq28bhd (https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png)[0m
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 7072)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:05 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:05 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started POST "/post_images/1/post_comments" for 116.82.161.120 at 2022-04-09 07:44:12 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostCommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post_comment"=>{"comment"=>"test1"}, "commit"=>"送信する", "post_image_id"=>"1"}
+  [1m[36mPostImage Load (0.2ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:3:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:6:in `create'
+  [1m[36mPostImage Load (0.1ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:6:in `create'
+  [1m[36mPostComment Create (3.3ms)[0m  [1m[32mINSERT INTO "post_comments" ("comment", "user_id", "post_image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["comment", "test1"], ["user_id", 1], ["post_image_id", 1], ["created_at", "2022-04-09 07:44:12.294179"], ["updated_at", "2022-04-09 07:44:12.294179"]]
+  ↳ app/controllers/post_comments_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:6:in `create'
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/post_images/1
+Completed 302 Found in 24ms (ActiveRecord: 7.7ms | Allocations: 8692)
+
+
+Started GET "/post_images/1" for 116.82.161.120 at 2022-04-09 07:44:12 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPostImage Load (0.2ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:14
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  Rendered post_images/show.html.erb within layouts/application (Duration: 30.0ms | Allocations: 12112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 15380)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 1.0ms | Allocations: 16343)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:12 +0000
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:12 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 307)
+
+
+Started GET "/post_images/new" for 116.82.161.120 at 2022-04-09 07:44:36 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4869)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 5408)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:36 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:36 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 2483)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 696)
+
+
+Started GET "/users/1" for 116.82.161.120 at 2022-04-09 07:44:37 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mPostImage Load (0.2ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:12
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:12
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/users/show.html.erb:18
+  Rendered users/show.html.erb within layouts/application (Duration: 55.6ms | Allocations: 13015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 60.2ms | Allocations: 16290)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 1.3ms | Allocations: 17968)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f5a7bf3806c4dc3bd5ee58e4dea214a58b43524d/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:37 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f5a7bf3806c4dc3bd5ee58e4dea214a58b43524d", "filename"=>"142_refileDownloadImage"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 7o50icdyophcte630h17jpcxlk69 (https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMjgxTUdsalpIbHZjR2hqZEdVMk16Qm9NVGRxY0dONGJHczJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjM3LjM5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--750a5e6e4b0498ebbe68175cc7c4aebab0e0d18e/142_refileDownloadImage.png)[0m
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:37 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:37 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMjgxTUdsalpIbHZjR2hqZEdVMk16Qm9NVGRxY0dONGJHczJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjM3LjM5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--750a5e6e4b0498ebbe68175cc7c4aebab0e0d18e/142_refileDownloadImage.png
+Completed 302 Found in 13ms (ActiveRecord: 0.1ms | Allocations: 9019)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMjgxTUdsalpIbHZjR2hqZEdVMk16Qm9NVGRxY0dONGJHczJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjM3LjM5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--750a5e6e4b0498ebbe68175cc7c4aebab0e0d18e/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:37 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started GET "/post_images/1" for 116.82.161.120 at 2022-04-09 07:44:41 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPostImage Load (0.2ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:5
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:41 +0000
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:41 +0000
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMjgxTUdsalpIbHZjR2hqZEdVMk16Qm9NVGRxY0dONGJHczJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjM3LjM5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--750a5e6e4b0498ebbe68175cc7c4aebab0e0d18e/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:41 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  ↳ app/models/user.rb:13:in `get_profile_image'
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:14
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  Rendered post_images/show.html.erb within layouts/application (Duration: 48.1ms | Allocations: 21750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 25023)
+Completed 200 OK in 56ms (Views: 52.3ms | ActiveRecord: 1.2ms | Allocations: 26000)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:41 +0000
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:44:41 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms | Allocations: 2177)
+
+
+Started GET "/" for 116.82.161.120 at 2022-04-09 07:48:58 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 0.6ms | Allocations: 231)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 8018)
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 11533)
+
+
+Started GET "/" for 116.82.161.120 at 2022-04-09 07:48:59 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 9783)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.7ms | Allocations: 10185)
+
+
+Started GET "/post_images/new" for 116.82.161.120 at 2022-04-09 07:49:01 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/new.html.erb within layouts/application
+  Rendered post_images/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 924)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5063)
+Completed 200 OK in 23ms (Views: 11.7ms | ActiveRecord: 0.8ms | Allocations: 11100)
+
+
+Started GET "/users/1" for 116.82.161.120 at 2022-04-09 07:49:03 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:4
+  [1m[36mPostImage Load (0.1ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:12
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:12
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 2]]
+  ↳ app/views/users/show.html.erb:18
+  Rendered users/show.html.erb within layouts/application (Duration: 77.3ms | Allocations: 36801)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.0ms | Allocations: 39979)
+Completed 200 OK in 88ms (Views: 79.8ms | ActiveRecord: 3.7ms | Allocations: 43323)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMjgxTUdsalpIbHZjR2hqZEdVMk16Qm9NVGRxY0dONGJHczJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjM3LjM5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--750a5e6e4b0498ebbe68175cc7c4aebab0e0d18e/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:03 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--224848e45c3160a58ef677caf95c79662fd114f0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:03 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 423)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjA1LjY5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--c814fba6193fcba1a907cbea9352e6d0e7f43603/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:03 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 735)
+
+
+Started GET "/post_images/1" for 116.82.161.120 at 2022-04-09 07:49:06 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPostImage Load (0.3ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:2
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:14
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:16
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mCACHE ActiveStorage::VariantRecord Load (0.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  Rendered post_images/show.html.erb within layouts/application (Duration: 44.2ms | Allocations: 14653)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.1ms | Allocations: 17827)
+Completed 200 OK in 57ms (Views: 48.6ms | ActiveRecord: 1.7ms | Allocations: 21830)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9cd236b35d5176368b54bde561d21c4d74213af0/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:06 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8c95f9b047a9dfc73e88d9951d35292ce047613/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--cd2b2f22947e1e465dafc68aec2ef4d65aa799c5/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:06 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9cd236b35d5176368b54bde561d21c4d74213af0", "filename"=>"142_refileDownloadImage"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMjgxTUdsalpIbHZjR2hqZEdVMk16Qm9NVGRxY0dONGJHczJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjQ5OjM3LjM5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--750a5e6e4b0498ebbe68175cc7c4aebab0e0d18e/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:06 +0000
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8c95f9b047a9dfc73e88d9951d35292ce047613", "variation_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Processing by ActiveStorage::DiskController#show as PNG
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[36m  Disk Storage (29.4ms) [0m[34mGenerated URL for file at key: dydg7bgwlj121zctn1ahraq28bhd (https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg1N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--53cab77fe3b4763ce7834c71a268024330b3b183/142_refileDownloadImage.png)[0m
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg1N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--53cab77fe3b4763ce7834c71a268024330b3b183/142_refileDownloadImage.png
+Completed 302 Found in 40ms (ActiveRecord: 0.1ms | Allocations: 19852)
+
+
+[36m  Disk Storage (6.4ms) [0m[34mGenerated URL for file at key: 9ig82sctmk6t84hye9ak01dtenoq (https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg2MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef8ab465704a9165c45c8efd8e0bed3aa887f3ba/142_refileDownloadImage.png)[0m
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg2MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef8ab465704a9165c45c8efd8e0bed3aa887f3ba/142_refileDownloadImage.png
+Completed 302 Found in 30ms (ActiveRecord: 1.3ms | Allocations: 13164)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg1N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--53cab77fe3b4763ce7834c71a268024330b3b183/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:07 +0000
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg2MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef8ab465704a9165c45c8efd8e0bed3aa887f3ba/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:07 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started DELETE "/post_images/1/post_comments/1" for 116.82.161.120 at 2022-04-09 07:49:11 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostCommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post_image_id"=>"1", "id"=>"1"}
+  [1m[36mPostComment Load (0.2ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_comments_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:11:in `destroy'
+  [1m[36mPostComment Destroy (1.6ms)[0m  [1m[31mDELETE FROM "post_comments" WHERE "post_comments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/post_comments_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/post_comments_controller.rb:11:in `destroy'
+Redirected to https://90e40764b4304ad183184d42971d6cca.vfs.cloud9.us-east-1.amazonaws.com/post_images/1
+Completed 302 Found in 18ms (ActiveRecord: 9.0ms | Allocations: 4785)
+
+
+Started GET "/post_images/1" for 116.82.161.120 at 2022-04-09 07:49:11 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostImagesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPostImage Load (0.2ms)[0m  [1m[34mSELECT "post_images".* FROM "post_images" WHERE "post_images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/post_images_controller.rb:18:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering post_images/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "PostImage"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/post_image.rb:8:in `get_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "User"], ["name", "profile_image"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `get_profile_image'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 8], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `get_profile_image'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/post_images/show.html.erb:8
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:14
+  [1m[36mPostComment Load (0.1ms)[0m  [1m[34mSELECT "post_comments".* FROM "post_comments" WHERE "post_comments"."post_image_id" = ?[0m  [["post_image_id", 1]]
+  ↳ app/views/post_images/show.html.erb:15
+  Rendered post_images/show.html.erb within layouts/application (Duration: 22.4ms | Allocations: 8421)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 11688)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 1.2ms | Allocations: 12668)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxrWnpkaVozZHNhakV5TVhwamRHNHhZV2h5WVhFeU9HSm9aQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg1N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--53cab77fe3b4763ce7834c71a268024330b3b183/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:11 +0000
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV2xuT0RKelkzUnRhelowT0RSb2VXVTVZV3N3TVdSMFpXNXZjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFME1sOXlaV1pwYkdWRWIzZHViRzloWkVsdFlXZGxMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0Njbk1UUXlYM0psWm1sc1pVUnZkMjVzYjJGa1NXMWhaMlV1Y0c1bkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDIyLTA0LTA5VDA3OjU0OjA2Ljg2MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ef8ab465704a9165c45c8efd8e0bed3aa887f3ba/142_refileDownloadImage.png" for 116.82.161.120 at 2022-04-09 07:49:11 +0000
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 116.82.161.120! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"142_refileDownloadImage"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 304)
+
+
